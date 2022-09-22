@@ -1,0 +1,421 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "1.0",
+    "title": "Crud-Operation",
+    "contact": {}
+  },
+  "host": "localhost:5000",
+  "basePath": "/api",
+  "securityDefinitions": {},
+  "schemes": [
+    "http"
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/product": {
+      "post": {
+        "summary": "Create Product",
+        "tags": [
+          "Product"
+        ],
+        "operationId": "CreateProduct",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "required": false,
+            "default": "Bearer {token}",
+            "type": "string"
+          },
+          {
+            "name": "Body",
+            "in": "body",
+            "required": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/CreateProductRequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      },
+      "get": {
+        "summary": "Get All Products",
+        "tags": [
+          "Product"
+        ],
+        "operationId": "GetAllProducts",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "required": false,
+            "default": "Bearer {token}",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      }
+    },
+    "/product/{id}": {
+      "get": {
+        "summary": "Get Products by Id",
+        "tags": [
+          "Product"
+        ],
+        "operationId": "GetProductsbyId",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "required": false,
+            "default": "Bearer {token}",
+            "type": "string"
+          },{
+            "name": "id",
+            "in": "path",
+            "description": "ID of product to find",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      }
+    },
+    "/product/{id}": {
+      "put": {
+        "summary": "Update Products",
+        "tags": [
+          "Product"
+        ],
+        "operationId": "UpdateProducts",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "required": false,
+            "default": "Bearer {token}",
+            "type": "string"
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "description": "ID of product to update",
+            "required": true
+          },
+          {
+            "name": "Body",
+            "in": "body",
+            "required": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/UpdateProductsRequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      }
+    },
+    "/category": {
+      "post": {
+        "summary": "Product in CategoryId",
+        "tags": [
+          "Product"
+        ],
+        "operationId": "ProductinCategoryId",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "required": false,
+            "default": "Bearer {token}",
+            "type": "string"
+          },
+          {
+            "name": "Body",
+            "in": "body",
+            "required": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/ProductinCategoryIdRequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      }
+    },
+    "/login": {
+      "post": {
+        "summary": "Login",
+        "tags": [
+          "Auth"
+        ],
+        "operationId": "Login",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "required": false,
+            "default": "Bearer {token}",
+            "type": "string"
+          },
+          {
+            "name": "Body",
+            "in": "body",
+            "required": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/LoginRequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      }
+    },
+    "/user": {
+      "get": {
+        "summary": "get All User",
+        "tags": [
+          "User"
+        ],
+        "operationId": "getAllUser",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "required": false,
+            "default": "Bearer {token}",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      },
+      "put": {
+        "summary": "Update User",
+        "tags": [
+          "User"
+        ],
+        "operationId": "UpdateUser",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "required": false,
+            "default": "Bearer {token}",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      },
+      "delete": {
+        "summary": "New Request",
+        "tags": [
+          "User"
+        ],
+        "operationId": "NewRequest",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "required": false,
+            "default": "Bearer {token}",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "CreateProductRequest": {
+      "title": "CreateProductRequest",
+      "example": {
+        "productname": "Women -Kurtis",
+        "productprice": "1000",
+        "productdetails": "Good quality Women Kurtis  in cheap offer grab it now"
+      },
+      "type": "object",
+      "properties": {
+        "productname": {
+          "type": "string"
+        },
+        "productprice": {
+          "type": "string"
+        },
+        "productdetails": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "productname",
+        "productprice",
+        "productdetails"
+      ]
+    },
+    "UpdateProductsRequest": {
+      "title": "UpdateProductsRequest",
+      "example": {
+        "productprice": 3500
+      },
+      "type": "object",
+      "properties": {
+        "productprice": {
+          "type": "integer",
+          "format": "int32"
+        }
+      },
+      "required": [
+        "productprice"
+      ]
+    },
+    "ProductinCategoryIdRequest": {
+      "title": "ProductinCategoryIdRequest",
+      "example": {
+        "productname": "Kurta-Paijama",
+        "productprice": 700,
+        "productdetails": "Branded Kurtas for mens in Offer",
+        "categoryId": "632665f2e396eec67a874e6c"
+      },
+      "type": "object",
+      "properties": {
+        "productname": {
+          "type": "string"
+        },
+        "productprice": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "productdetails": {
+          "type": "string"
+        },
+        "categoryId": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "productname",
+        "productprice",
+        "productdetails",
+        "categoryId"
+      ]
+    },
+    "LoginRequest": {
+      "title": "LoginRequest",
+      "example": {
+        "email": "dpk@gmail.com",
+        "password": "123"
+      },
+      "type": "object",
+      "properties": {
+        "email": {
+          "type": "string"
+        },
+        "password": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "email",
+        "password"
+      ]
+    }
+  },
+  "security": [],
+  "tags": [
+    {
+      "name": "Product"
+    },
+    {
+      "name": "Auth"
+    },
+    {
+      "name": "User"
+    }
+  ]
+}
