@@ -19,7 +19,7 @@ app.use(express.urlencoded({extended:false, limit:'10mb'}));
 app.use(express.static(path.join(__dirname, 'images')))
 app.use(express.static(path.join(__dirname, 'resume')))
 
-// app.use(cors())
+app.use(cors())
 
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
