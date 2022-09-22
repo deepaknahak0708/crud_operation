@@ -10,7 +10,6 @@ const swaggerUi = require('swagger-ui-express');
 const swaggerDocument = require('./swegger.json');
 const cors = require('cors')
 
-
 const error = require('./utils/validation/errorHandle');
 
 app.use(express.json({limit:'10mb'}));
@@ -20,7 +19,7 @@ app.use(express.urlencoded({extended:false, limit:'10mb'}));
 app.use(express.static(path.join(__dirname, 'images')))
 app.use(express.static(path.join(__dirname, 'resume')))
 
-app.use(cors())
+// app.use(cors())
 
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
@@ -28,6 +27,8 @@ app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 app.use('/api', router)
 
 adminseed()
+
+app.use(error)
 
 app.listen(port, ()=>{
     console.log(`Server listening to port ${port}`)
